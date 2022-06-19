@@ -11,3 +11,7 @@ pytz==2020.1
 sqlparse==0.3.1
 python-dotenv==0.20.0
 requests==2.26.0
+
+pytest==6.2.4
+pytest-pythonpath==0.7.3
+pytest-django==4.4.0
