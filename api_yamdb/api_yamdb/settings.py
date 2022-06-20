@@ -2,6 +2,7 @@ import os
 from datetime import timedelta
 
 from dotenv import load_dotenv
+
 # путь до файла с переменными окружения !
 load_dotenv(dotenv_path='./infra/.env')
 
