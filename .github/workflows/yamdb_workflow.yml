@@ -3,6 +3,7 @@ name: Yamdb workflow
 on: [push]
 
 jobs:
+
   tests:
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
@@ -25,11 +26,12 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         cd ./api_yamdb/
         pip install -r requirements.txt 
-      with:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
     - name: Test with flake8 and django tests
       run: |
+        cd ./infra/
+        touch .env
+        echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
         python -m flake8
         # перейти в папку, содержащую manage.py — 
         #<корневая_папка_infra_actions>/<папка_проекта>/manage.py
