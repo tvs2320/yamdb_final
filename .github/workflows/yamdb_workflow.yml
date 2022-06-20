@@ -29,7 +29,8 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        touch .env
+        # создать файл переменных окружения и добавить в него SECRET_KEY
+        touch ./infra/.env
         echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
         python -m flake8
         # перейти в папку, содержащую manage.py — 
