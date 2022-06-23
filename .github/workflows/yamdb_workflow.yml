@@ -76,7 +76,6 @@ jobs:
           script: |
             # Выполняет pull образа с DockerHub
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
-            cd ./infra/
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
