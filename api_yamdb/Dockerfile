@@ -9,4 +9,4 @@ RUN pip3 install -r /app/requirements.txt --no-cache-dir
 COPY . .
 
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
-ENV SECRET_KEY="p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
+
