@@ -24,10 +24,7 @@ jobs:
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
-        # перейти в папку, содержащую manage.py — 
-        #<корневая_папка_infra_actions>/<папка_проекта>/manage.py
         cd ./
-        # запустить написанные разработчиком тесты
         pytest
 
   build_and_push_to_docker_hub:
@@ -63,7 +60,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            # Выполняет pull образа с DockerHub
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
