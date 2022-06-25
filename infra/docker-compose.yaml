@@ -10,6 +10,8 @@ services:
   web:
     image: timaone2014/yamdb_final
     restart: always
+    ports:
+      - "6000:6000"
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
