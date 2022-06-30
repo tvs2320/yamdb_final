@@ -13,7 +13,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - static_value:/app/static/
+      - static_value:/app/redoc/
       - media_value:/app/media/
     depends_on:
       - db
@@ -30,7 +30,8 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d
       - static_value:/var/html/static/
       - media_value:/var/html/media/
-      - ../static/redoc.yaml:/app/static/redoc.yaml
+      - ../redoc/redoc.yaml:/var/html/static/redoc.yaml
+      - ../api_yamdb/templates/redoc.html:/var/html/redoc/redoc.html
 
     depends_on:
       - web
@@ -38,3 +39,4 @@ services:
 volumes:
   static_value:
   media_value:
+  redoc:
