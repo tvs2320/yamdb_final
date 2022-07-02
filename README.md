@@ -3,6 +3,8 @@
 * * *
 ![yamdb_workflow Actions Status](https://github.com/tvs2320/yamdb_final/workflows/yamdb_workflow/badge.svg)
 
+VM в облаке должна быть включена!
+
 Доступ к админке Django:
 http://51.250.105.144/admin
 
