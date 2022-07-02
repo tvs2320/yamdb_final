@@ -122,7 +122,3 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=365),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
 }
-
-SPECTACULAR_SETTINGS = {
-    'REDOC_DIST': 'https://cdn.jsdelivr.net/npm/redoc@latest',
-}
