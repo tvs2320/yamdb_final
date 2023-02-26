@@ -12,7 +12,7 @@ services:
     image: timaone2014/yamdb_final
     restart: always
     volumes:
-      - static_value:/app/redoc/
+      - static_value:/app/static/
       - media_value:/app/media/
     depends_on:
       - db
@@ -27,7 +27,7 @@ services:
       - "80:80"
 
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  # удалить /nginx при отправке на сервер
+      - ./default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
       - ./redoc.yaml:/var/html/static/redoc.yaml
@@ -39,4 +39,3 @@ services:
 volumes:
   static_value:
   media_value:
-
